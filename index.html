@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OptSol Consulting Group | Audit, Tax & Business Advisory – Uganda</title>
+  <meta name="description" content="OptSol Consulting Group – Qualified Chartered & Certified Public Accountants. Expert audit, tax advisory, risk consulting & financial management across East Africa. 12+ years of excellence." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Figtree:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red:      #CC3821;
+      --red-d:    #A82D1A;
+      --red-l:    #E04530;
+      --red-5:    rgba(204,56,33,.05);
+      --red-10:   rgba(204,56,33,.10);
+      --red-18:   rgba(204,56,33,.18);
+      --navy:     #1A2744;
+      --navy-2:   #1E2F52;
+      --navy-3:   #243868;
+      --navy-10:  rgba(26,39,68,.10);
+      --white:    #FFFFFF;
+      --off:      #F6F4F1;
+      --off2:     #EFEDE9;
+      --border:   #E3DDD7;
+      --txt:      #1A2744;
+      --muted:    #52606E;
+      --sub:      #8C97A2;
+      --r:        6px;
+      --rl:       14px;
+      --rxl:      22px;
+      --sh1:      0 1px 12px rgba(26,39,68,.07);
+      --sh2:      0 6px 32px rgba(26,39,68,.12);
+      --sh3:      0 18px 56px rgba(26,39,68,.17);
+      --ease:     .3s cubic-bezier(.4,0,.2,1);
+      --H: 'Outfit', sans-serif;
+      --B: 'Figtree', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--B); color: var(--txt);
+      background: var(--white); overflow-x: hidden;
+      line-height: 1.65; -webkit-font-smoothing: antialiased;
+    }
+    h1,h2,h3,h4 { font-family: var(--H); line-height: 1.15; color: var(--navy); }
+    p { color: var(--muted); }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; }
+
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+    .sec  { padding: 96px 0; }
+
+    /* ─── Label ─── */
+    .label {
+      font-family: var(--H); font-size: .68rem; font-weight: 700;
+      letter-spacing: .2em; text-transform: uppercase; color: var(--red);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .label::before { content:''; width: 18px; height: 2px; background: var(--red); flex-shrink: 0; }
+
+    /* ─── Buttons ─── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 26px; border-radius: var(--r);
+      font-family: var(--H); font-size: .85rem; font-weight: 600;
+      border: 2px solid transparent; cursor: pointer;
+      transition: var(--ease); white-space: nowrap;
+    }
+    .btn svg { width: 14px; height: 14px; flex-shrink: 0; }
+    .btn-solid { background: var(--red); color: #fff; border-color: var(--red); box-shadow: 0 3px 14px var(--red-18); }
+    .btn-solid:hover { background: var(--red-d); transform: translateY(-2px); box-shadow: 0 7px 24px var(--red-18); }
+    .btn-dark  { background: var(--navy); color: #fff; border-color: var(--navy); }
+    .btn-dark:hover { background: var(--navy-2); transform: translateY(-2px); }
+    .btn-wire  { background: transparent; color: var(--red); border-color: var(--red); }
+    .btn-wire:hover { background: var(--red); color: #fff; transform: translateY(-2px); }
+    .btn-ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,.38); }
+    .btn-ghost:hover { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.7); transform: translateY(-2px); }
+    .btn-wh    { background: #fff; color: var(--navy); border-color: #fff; font-weight: 700; }
+    .btn-wh:hover { background: var(--off); transform: translateY(-2px); }
+
+    /* ════════════════════════════════
+       NAV
+    ════════════════════════════════ */
+    #topnav {
+      position: fixed; inset: 0 0 auto; z-index: 900;
+      padding: 0; transition: var(--ease);
+    }
+    #topnav.solid { background: var(--navy); box-shadow: 0 2px 30px rgba(0,0,0,.3); }
+
+    .nav-bar {
+      display: flex; align-items: stretch; justify-content: space-between;
+      height: 64px;
+    }
+    /* Logo slot — white bg pill that always shows logo colors */
+    .nav-logo {
+      display: flex; align-items: center; padding: 0 22px 0 0;
+      border-right: 1px solid rgba(255,255,255,.08);
+    }
+    .nav-logo-inner {
+      background: #fff; border-radius: var(--r);
+      padding: 5px 12px; display: flex; align-items: center;
+    }
+    .nav-logo-inner img { height: 36px; width: auto; }
+
+    .nav-links-wrap { display: flex; align-items: center; padding: 0 22px; gap: 2px; }
+    .nav-links-wrap a {
+      font-family: var(--H); font-size: .82rem; font-weight: 500;
+      color: rgba(255,255,255,.6); padding: 6px 12px;
+      border-radius: var(--r); transition: var(--ease);
+    }
+    .nav-links-wrap a:hover, .nav-links-wrap a.on { color: #fff; background: rgba(255,255,255,.07); }
+
+    .nav-right { display: flex; align-items: center; gap: 12px; padding: 0 0 0 22px; border-left: 1px solid rgba(255,255,255,.08); }
+    .nav-tel { font-family: var(--H); font-size: .8rem; font-weight: 500; color: rgba(255,255,255,.45); transition: var(--ease); }
+    .nav-tel:hover { color: rgba(255,170,150,.9); }
+
+    .hbg { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 10px; }
+    .hbg span { display: block; width: 20px; height: 1.5px; background: #fff; border-radius: 2px; transition: var(--ease); }
+    .hbg.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .hbg.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hbg.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    .mob-menu {
+      display: none; flex-direction: column;
+      position: fixed; inset: 64px 0 0;
+      background: var(--navy); z-index: 899;
+      padding: 24px 28px 40px; overflow-y: auto; gap: 0;
+    }
+    .mob-menu.open { display: flex; }
+    .mob-menu a {
+      font-family: var(--H); font-size: 1.35rem; font-weight: 600;
+      color: rgba(255,255,255,.7); padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,.06); transition: var(--ease);
+    }
+    .mob-menu a:hover { color: rgba(255,150,120,.9); padding-left: 8px; }
+    .mob-cta { margin-top: 22px; }
+
+    /* ════════════════════════════════
+       HERO — Bold split layout
+    ════════════════════════════════ */
+    #hero {
+      min-height: 100vh; background: var(--navy);
+      display: grid; grid-template-columns: 1fr 1fr;
+      position: relative; overflow: hidden;
+    }
+
+    /* Left half */
+    .hero-left {
+      padding: 140px 60px 80px 0;
+      display: flex; flex-direction: column; justify-content: center;
+      position: relative; z-index: 2;
+    }
+    .hero-left .wrap-inner { padding-left: 28px; max-width: 640px; }
+
+    /* Big decorative "12+" watermark */
+    .hero-watermark {
+      position: absolute; top: 50%; left: -10px; transform: translateY(-50%);
+      font-family: var(--H); font-size: 28rem; font-weight: 900;
+      color: rgba(255,255,255,.025); line-height: 1; pointer-events: none;
+      user-select: none; white-space: nowrap;
+    }
+
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--red-10); border: 1px solid var(--red-18);
+      border-radius: 100px; padding: 5px 14px; margin-bottom: 28px;
+      font-family: var(--H); font-size: .68rem; font-weight: 700;
+      letter-spacing: .16em; text-transform: uppercase; color: rgba(255,150,130,.95);
+      width: fit-content;
+    }
+    .hero-dot { width: 6px; height: 6px; background: var(--red-l); border-radius: 50%; animation: pls 2.2s infinite; }
+
+    .hero-h1 {
+      font-family: var(--H);
+      font-size: clamp(2.8rem, 5.5vw, 4.6rem);
+      font-weight: 800; color: #fff; line-height: 1.06;
+      letter-spacing: -.025em; margin-bottom: 24px;
+    }
+    .hero-h1 mark {
+      background: none; color: var(--red-l);
+      position: relative;
+    }
+    .hero-h1 mark::after {
+      content: '';
+      position: absolute; bottom: 4px; left: 0; right: 0; height: 3px;
+      background: var(--red-l); border-radius: 2px; opacity: .5;
+    }
+
+    .hero-sub {
+      font-family: var(--B); font-size: 1.06rem;
+      color: rgba(255,255,255,.58); line-height: 1.82;
+      max-width: 480px; margin-bottom: 36px;
+    }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 52px; }
+
+    /* Stat row */
+    .stat-row { display: flex; gap: 0; }
+    .stat-item { padding: 0 32px 0 0; margin-right: 32px; border-right: 1px solid rgba(255,255,255,.1); }
+    .stat-item:last-child { border: none; margin: 0; padding: 0; }
+    .stat-n {
+      font-family: var(--H); font-size: 2.4rem; font-weight: 800;
+      color: #fff; line-height: 1;
+    }
+    .stat-n em { color: var(--red-l); font-style: normal; }
+    .stat-l {
+      font-family: var(--H); font-size: .65rem; font-weight: 600;
+      color: rgba(255,255,255,.38); text-transform: uppercase;
+      letter-spacing: .12em; margin-top: 4px;
+    }
+
+    /* Right half — photo collage */
+    .hero-right {
+      position: relative; overflow: hidden;
+    }
+    .hero-photo-main {
+      position: absolute; inset: 0;
+      background: url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=900&q=80') center/cover no-repeat;
+    }
+    .hero-photo-ov {
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, var(--navy) 0%, transparent 30%),
+                  linear-gradient(to top, rgba(26,39,68,.5) 0%, transparent 50%);
+    }
+    /* Julius portrait floating card */
+    .hero-portrait {
+      position: absolute; bottom: 40px; left: -28px; z-index: 3;
+      width: 160px; background: var(--navy);
+      border-radius: var(--rl); overflow: hidden;
+      box-shadow: var(--sh3); border: 3px solid var(--navy);
+    }
+    .hero-portrait img { width: 100%; display: block; object-fit: cover; object-position: top; }
+    .hero-portrait-cap {
+      padding: 10px 12px;
+      font-family: var(--H); font-size: .7rem; font-weight: 700; color: #fff; line-height: 1.3;
+    }
+    .hero-portrait-cap span { display: block; font-weight: 400; color: rgba(255,255,255,.48); font-size: .64rem; margin-top: 2px; }
+
+    /* Red accent bar */
+    .hero-accent-bar {
+      position: absolute; top: 0; left: 0; width: 4px; height: 100%;
+      background: linear-gradient(to bottom, var(--red) 0%, transparent 100%);
+    }
+
+    /* ════════════════════════════════
+       TRUST STRIP
+    ════════════════════════════════ */
+    #trust { background: var(--off); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 14px 0; }
+    .trust-row { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px 24px; }
+    .ti { display: flex; align-items: center; gap: 8px; font-family: var(--H); font-size: .7rem; font-weight: 600; color: var(--muted); letter-spacing: .07em; text-transform: uppercase; }
+    .ti svg { width: 14px; height: 14px; color: var(--red); flex-shrink: 0; }
+    .tsep { width: 1px; height: 14px; background: var(--border); }
+
+    /* ════════════════════════════════
+       ABOUT — Horizontal bento layout
+    ════════════════════════════════ */
+    #about { background: var(--white); }
+    .about-bento {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 16px;
+    }
+    /* Cell 1: Big text block */
+    .ab-intro {
+      grid-column: 1 / 3; grid-row: 1;
+      background: var(--navy); border-radius: var(--rxl);
+      padding: 48px 52px; display: flex; flex-direction: column; justify-content: space-between;
+      min-height: 300px;
+    }
+    .ab-intro h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); color: #fff; max-width: 560px; line-height: 1.22; }
+    .ab-intro p { font-size: 1rem; color: rgba(255,255,255,.55); max-width: 540px; line-height: 1.8; margin-top: 18px; }
+    /* Cell 2: Julius photo */
+    .ab-photo {
+      grid-column: 3; grid-row: 1 / 3;
+      border-radius: var(--rxl); overflow: hidden; min-height: 420px;
+      position: relative;
+    }
+    .ab-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+    .ab-photo-cap {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(26,39,68,.9) 0%, transparent 100%);
+      padding: 28px 22px 20px;
+    }
+    .ab-photo-cap .name { font-family: var(--H); font-size: .95rem; font-weight: 700; color: #fff; }
+    .ab-photo-cap .role { font-size: .76rem; color: rgba(255,255,255,.55); margin-top: 3px; }
+    .ab-photo-cap .creds { display: flex; gap: 5px; margin-top: 8px; flex-wrap: wrap; }
+    .cred-pill { padding: 2px 9px; border: 1px solid rgba(204,56,33,.45); border-radius: 100px; font-family: var(--H); font-size: .63rem; font-weight: 700; color: rgba(255,150,120,.9); }
+
+    /* Cell 3: Pillars row */
+    .ab-pillars {
+      grid-column: 1 / 3; grid-row: 2;
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px;
+    }
+    .ap {
+      background: var(--off); border: 1px solid var(--border);
+      border-radius: var(--rl); padding: 22px 20px; transition: var(--ease);
+      border-top: 3px solid transparent;
+    }
+    .ap:hover { border-top-color: var(--red); background: #fff5f3; }
+    .ap-icon { width: 36px; height: 36px; background: var(--red-10); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+    .ap-icon svg { width: 16px; height: 16px; color: var(--red); }
+    .ap h4 { font-family: var(--H); font-size: .92rem; font-weight: 700; color: var(--navy); margin-bottom: 5px; }
+    .ap p  { font-size: .83rem; line-height: 1.65; margin: 0; }
+
+    /* ════════════════════════════════
+       SERVICES — Number list style
+    ════════════════════════════════ */
+    #services { background: var(--off); }
+    .svc-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 56px; gap: 24px; flex-wrap: wrap; }
+    .svc-header h2 { font-size: clamp(2rem,3vw,2.8rem); max-width: 540px; }
+    .svc-header p  { font-size: .95rem; max-width: 380px; text-align: right; }
+
+    .svc-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .sc {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--rl); padding: 26px 22px 22px;
+      transition: var(--ease); display: flex; flex-direction: column;
+      cursor: pointer; position: relative;
+    }
+    .sc::before {
+      content: ''; position: absolute; inset: 0;
+      border-radius: var(--rl); border: 2px solid var(--red);
+      opacity: 0; transition: var(--ease);
+    }
+    .sc:hover { box-shadow: var(--sh2); transform: translateY(-4px); }
+    .sc:hover::before { opacity: 1; }
+    .sc-num {
+      font-family: var(--H); font-size: .72rem; font-weight: 700;
+      color: var(--red); letter-spacing: .1em; margin-bottom: 16px;
+      background: var(--red-10); width: fit-content;
+      padding: 3px 9px; border-radius: 4px;
+    }
+    .sc-ico { width: 44px; height: 44px; background: var(--red-10); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; transition: var(--ease); }
+    .sc:hover .sc-ico { background: var(--red); }
+    .sc-ico svg { width: 20px; height: 20px; color: var(--red); transition: var(--ease); }
+    .sc:hover .sc-ico svg { color: #fff; }
+    .sc h3 { font-family: var(--H); font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .sc p  { font-size: .83rem; line-height: 1.68; flex: 1; }
+    .sc-link {
+      display: inline-flex; align-items: center; gap: 4px;
+      margin-top: 14px; font-family: var(--H); font-size: .72rem; font-weight: 700;
+      color: var(--red); letter-spacing: .07em; text-transform: uppercase;
+    }
+    .sc-link svg { width: 10px; height: 10px; transition: var(--ease); }
+    .sc:hover .sc-link svg { transform: translateX(3px); }
+
+    /* ════════════════════════════════
+       IMPACT — Red band
+    ════════════════════════════════ */
+    #impact {
+      background: var(--red);
+      background-image: linear-gradient(130deg, var(--red-d) 0%, var(--red) 60%, var(--red-l) 100%);
+      padding: 64px 0; position: relative; overflow: hidden;
+    }
+    #impact::before {
+      content: ''; position: absolute; right: -5%; top: -50%;
+      width: 500px; height: 500px; border-radius: 50%;
+      background: rgba(255,255,255,.06); pointer-events: none;
+    }
+    .impact-row { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .imp-item { text-align: center; flex: 1; min-width: 140px; }
+    .imp-n { font-family: var(--H); font-size: 3rem; font-weight: 900; color: #fff; line-height: 1; }
+    .imp-l { font-family: var(--H); font-size: .72rem; font-weight: 600; color: rgba(255,255,255,.7); text-transform: uppercase; letter-spacing: .1em; margin-top: 6px; }
+    .imp-sep { width: 1px; height: 60px; background: rgba(255,255,255,.2); }
+
+    /* ════════════════════════════════
+       MD MESSAGE — Side-by-side
+    ════════════════════════════════ */
+    #ceo { background: var(--off); }
+    .ceo-wrap { display: grid; grid-template-columns: 400px 1fr; gap: 72px; align-items: center; }
+
+    .ceo-card {
+      background: var(--white); border-radius: var(--rxl);
+      overflow: hidden; box-shadow: var(--sh3); position: relative;
+    }
+    .ceo-img { height: 380px; overflow: hidden; background: var(--navy); }
+    .ceo-img img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+    .ceo-card-body { padding: 24px 26px; }
+    .ceo-card-name { font-family: var(--H); font-size: 1.05rem; font-weight: 800; color: var(--navy); }
+    .ceo-card-role { font-size: .78rem; color: var(--muted); margin-top: 3px; }
+    .ceo-card-tags { display: flex; gap: 5px; margin-top: 10px; flex-wrap: wrap; }
+    .ctag { padding: 3px 9px; border: 1px solid var(--red-18); border-radius: 4px; font-family: var(--H); font-size: .65rem; font-weight: 700; color: var(--red); letter-spacing: .05em; }
+    /* Red stripe on card top */
+    .ceo-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--red); }
+
+    .ceo-content {}
+    .ceo-content h2 { font-size: clamp(1.8rem, 3vw, 2.7rem); margin: 12px 0 20px; }
+    .ceo-blockquote {
+      border-left: 4px solid var(--red);
+      padding: 16px 20px; background: var(--white);
+      border-radius: 0 var(--rl) var(--rl) 0;
+      margin-bottom: 22px; box-shadow: var(--sh1);
+    }
+    .ceo-blockquote p { font-family: var(--B); font-style: italic; font-size: 1.08rem; color: var(--navy); line-height: 1.72; margin: 0; }
+    .ceo-paras { display: flex; flex-direction: column; gap: 14px; }
+    .ceo-paras p { font-size: .97rem; line-height: 1.82; }
+
+    /* ════════════════════════════════
+       TEAM
+    ════════════════════════════════ */
+    #team { background: var(--white); }
+    .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .tm {
+      border-radius: var(--rxl); overflow: hidden;
+      background: var(--off); border: 1px solid var(--border);
+      transition: var(--ease);
+    }
+    .tm:hover { transform: translateY(-5px); box-shadow: var(--sh3); border-color: transparent; }
+    .tm-img { height: 280px; overflow: hidden; position: relative; background: var(--navy); }
+    .tm-img img { width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform .5s ease; }
+    .tm:hover .tm-img img { transform: scale(1.04); }
+    .tm-img-ov { position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,39,68,.45) 0%, transparent 55%); opacity: 0; transition: var(--ease); }
+    .tm:hover .tm-img-ov { opacity: 1; }
+    .tm-body { padding: 18px 20px; }
+    .tm-name { font-family: var(--H); font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 2px; }
+    .tm-role { font-size: .78rem; font-weight: 600; color: var(--red); margin-bottom: 9px; }
+    .tm-bio  { font-size: .81rem; color: var(--muted); line-height: 1.62; margin-bottom: 11px; }
+    .tm-chips { display: flex; flex-wrap: wrap; gap: 4px; }
+    .chip { padding: 3px 8px; background: var(--navy-10); border-radius: 4px; font-family: var(--H); font-size: .63rem; font-weight: 700; color: var(--navy); letter-spacing: .04em; }
+
+    /* ════════════════════════════════
+       WHY — Dark grid
+    ════════════════════════════════ */
+    #why { background: var(--navy); position: relative; overflow: hidden; }
+    #why::after { content: ''; position: absolute; left: -5%; bottom: -25%; width: 460px; height: 460px; border-radius: 50%; background: radial-gradient(circle, rgba(204,56,33,.1) 0%, transparent 65%); pointer-events: none; }
+    .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .wc {
+      padding: 32px 28px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: var(--rl); transition: var(--ease);
+      border-bottom: 2px solid transparent;
+    }
+    .wc:hover { background: rgba(255,255,255,.07); border-bottom-color: var(--red); }
+    .wc-icon { width: 46px; height: 46px; background: var(--red-10); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+    .wc-icon svg { width: 21px; height: 21px; color: rgba(255,150,120,.9); }
+    .wc h4 { font-family: var(--H); font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 9px; }
+    .wc p  { font-size: .86rem; color: rgba(255,255,255,.48); line-height: 1.75; }
+
+    /* ════════════════════════════════
+       TESTIMONIALS — Large quote
+    ════════════════════════════════ */
+    #testimonials { background: var(--off); }
+    .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .tc {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--rl); padding: 30px 26px; transition: var(--ease); position: relative;
+    }
+    .tc:hover { transform: translateY(-4px); box-shadow: var(--sh2); border-color: var(--red-18); }
+    .tc-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
+    .tc-stars { display: flex; gap: 2px; }
+    .tc-stars span { color: #F4A21C; font-size: .88rem; }
+    .tc-quote-icon { font-family: Georgia, serif; font-size: 2.8rem; line-height: .5; color: var(--red); opacity: .22; }
+    .tc-text { font-family: var(--B); font-size: .96rem; color: var(--txt); line-height: 1.78; margin-bottom: 22px; font-style: italic; }
+    .tc-author { display: flex; align-items: center; gap: 11px; padding-top: 18px; border-top: 1px solid var(--border); }
+    .tc-av { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--H); font-size: .9rem; font-weight: 800; color: #fff; flex-shrink: 0; }
+    .tc-name { font-family: var(--H); font-size: .86rem; font-weight: 700; color: var(--navy); }
+    .tc-role { font-size: .75rem; color: var(--sub); margin-top: 2px; }
+
+    /* ════════════════════════════════
+       SECTORS
+    ════════════════════════════════ */
+    #sectors { background: var(--white); padding: 72px 0; }
+    .sec-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(168px, 1fr)); gap: 10px; }
+    .sec-item {
+      background: var(--off); border: 1px solid var(--border);
+      border-radius: var(--rl); padding: 20px 14px; text-align: center; transition: var(--ease);
+    }
+    .sec-item:hover { background: #fff5f3; border-color: var(--red-18); }
+    .sec-item svg { width: 24px; height: 24px; color: var(--red); margin: 0 auto 8px; }
+    .sec-item span { display: block; font-family: var(--H); font-size: .79rem; font-weight: 600; color: var(--navy); }
+
+    /* ════════════════════════════════
+       PROCESS — Numbered horizontal
+    ════════════════════════════════ */
+    #process { background: var(--off); }
+    .proc-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; position: relative; }
+    .proc-connector { position: absolute; top: 25px; left: calc(12.5% + 4px); right: calc(12.5% + 4px); height: 1px; background: linear-gradient(to right, var(--red) 0%, rgba(204,56,33,.15) 100%); }
+    .proc-step { text-align: center; position: relative; z-index: 1; }
+    .proc-circle {
+      width: 50px; height: 50px; border-radius: 50%;
+      background: var(--white); border: 2px solid var(--red);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--H); font-size: 1.1rem; font-weight: 800; color: var(--red);
+      margin: 0 auto 18px; transition: var(--ease);
+    }
+    .proc-step:hover .proc-circle { background: var(--red); color: #fff; }
+    .proc-step h4 { font-family: var(--H); font-size: .95rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .proc-step p  { font-size: .83rem; line-height: 1.65; }
+
+    /* ════════════════════════════════
+       CTA BAND
+    ════════════════════════════════ */
+    #cta-band { background: var(--navy); padding: 80px 0; text-align: center; position: relative; overflow: hidden; }
+    #cta-band::before { content: ''; position: absolute; right: -8%; top: -40%; width: 480px; height: 480px; border-radius: 50%; background: rgba(204,56,33,.08); pointer-events: none; }
+    #cta-band h2 { color: #fff; font-size: clamp(2rem, 3.5vw, 2.8rem); margin-bottom: 14px; position: relative; z-index: 2; }
+    #cta-band p { color: rgba(255,255,255,.55); font-size: 1.06rem; margin-bottom: 34px; position: relative; z-index: 2; }
+    .cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; position: relative; z-index: 2; }
+
+    /* ════════════════════════════════
+       CONTACT
+    ════════════════════════════════ */
+    #contact { background: var(--white); }
+    .con-wrap { display: grid; grid-template-columns: 1fr 1.4fr; gap: 72px; align-items: start; }
+    .con-info {}
+    .con-info h2 { font-size: clamp(1.8rem, 2.8vw, 2.5rem); margin: 12px 0 16px; }
+    .con-info > p { font-size: 1rem; margin-bottom: 32px; }
+    .con-items { display: flex; flex-direction: column; gap: 14px; margin-bottom: 28px; }
+    .ci-row { display: flex; gap: 13px; align-items: flex-start; }
+    .ci-ico { width: 42px; height: 42px; background: var(--red-10); border-radius: 9px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: 1px solid var(--red-18); }
+    .ci-ico svg { width: 17px; height: 17px; color: var(--red); }
+    .ci-row strong { display: block; font-family: var(--H); font-size: .7rem; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 2px; }
+    .ci-row a, .ci-row span { font-size: .92rem; color: var(--muted); text-decoration: none; transition: var(--ease); }
+    .ci-row a:hover { color: var(--red); }
+    .map-btn { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; height: 160px; background: var(--off); border: 1px solid var(--border); border-radius: var(--rl); text-decoration: none; transition: var(--ease); }
+    .map-btn:hover { border-color: var(--red-18); background: #fff5f3; }
+    .map-btn svg { width: 26px; height: 26px; color: var(--red); }
+    .map-btn .mt { font-family: var(--H); font-size: .86rem; font-weight: 700; color: var(--navy); }
+    .map-btn small { font-size: .7rem; color: var(--sub); }
+
+    .con-form { background: var(--off); border: 1px solid var(--border); border-radius: var(--rxl); padding: 42px; }
+    .con-form h3 { font-family: var(--H); font-size: 1.55rem; margin-bottom: 5px; }
+    .con-form > p { font-size: .86rem; margin-bottom: 24px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+    .fg { display: flex; flex-direction: column; gap: 5px; margin-bottom: 12px; }
+    .fg label { font-family: var(--H); font-size: .7rem; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: .09em; }
+    .fg input, .fg select, .fg textarea { padding: 12px 14px; border: 1.5px solid var(--border); border-radius: var(--r); font-family: var(--B); font-size: .92rem; color: var(--txt); background: var(--white); transition: var(--ease); outline: none; }
+    .fg input:focus, .fg select:focus, .fg textarea:focus { border-color: var(--red); box-shadow: 0 0 0 3px var(--red-10); background: #fff; }
+    .fg textarea { resize: vertical; min-height: 106px; }
+
+    /* ════════════════════════════════
+       FOOTER
+    ════════════════════════════════ */
+    #footer { background: var(--navy); padding: 76px 0 0; }
+    .foot-top { display: grid; grid-template-columns: 2.2fr 1fr 1fr 1.1fr; gap: 44px; padding-bottom: 52px; border-bottom: 1px solid rgba(255,255,255,.07); }
+    .f-brand {}
+    .f-logo-box { background: rgba(255,255,255,.07); border-radius: var(--r); padding: 8px 14px; display: inline-flex; align-items: center; margin-bottom: 18px; }
+    .f-logo-box img { height: 32px; filter: brightness(0) invert(1); }
+    .f-brand p { font-size: .84rem; color: rgba(255,255,255,.36); line-height: 1.8; margin-bottom: 20px; max-width: 300px; }
+    .socials { display: flex; gap: 7px; }
+    .soc { width: 34px; height: 34px; background: rgba(255,255,255,.06); border-radius: var(--r); display: flex; align-items: center; justify-content: center; text-decoration: none; transition: var(--ease); color: rgba(255,255,255,.4); }
+    .soc:hover { background: var(--red); color: #fff; }
+    .soc svg { width: 14px; height: 14px; }
+    .f-col h4 { font-family: var(--H); font-size: .65rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.28); margin-bottom: 16px; }
+    .f-col ul { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+    .f-col ul a { font-size: .83rem; color: rgba(255,255,255,.44); text-decoration: none; transition: var(--ease); }
+    .f-col ul a:hover { color: rgba(255,150,120,.9); }
+    .f-ci { display: flex; gap: 8px; margin-bottom: 9px; align-items: flex-start; }
+    .f-ci svg { width: 12px; height: 12px; color: var(--red-l); flex-shrink: 0; margin-top: 4px; }
+    .f-ci a, .f-ci span { font-size: .81rem; color: rgba(255,255,255,.4); text-decoration: none; transition: var(--ease); }
+    .f-ci a:hover { color: rgba(255,150,120,.9); }
+    .foot-bottom { padding: 18px 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+    .foot-bottom p { font-size: .72rem; color: rgba(255,255,255,.2); }
+    .f-badges { display: flex; gap: 6px; flex-wrap: wrap; }
+    .fbdg { padding: 3px 10px; border: 1px solid rgba(255,255,255,.08); border-radius: 4px; font-family: var(--H); font-size: .64rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: rgba(255,255,255,.25); }
+
+    /* WhatsApp */
+    .wa { position: fixed; bottom: 26px; right: 26px; z-index: 850; width: 56px; height: 56px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 6px 24px rgba(37,211,102,.45); transition: var(--ease); animation: waP 3s infinite; }
+    .wa:hover { transform: scale(1.1); animation: none; }
+    .wa svg { width: 26px; height: 26px; color: #fff; }
+    .wa-tip { position: absolute; right: 66px; background: var(--navy); color: #fff; font-family: var(--H); font-size: .74rem; font-weight: 600; padding: 5px 12px; border-radius: var(--r); white-space: nowrap; opacity: 0; pointer-events: none; transition: var(--ease); }
+    .wa:hover .wa-tip { opacity: 1; }
+
+    /* Reveal */
+    .rv { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
+    .rv.in { opacity: 1; transform: none; }
+    .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
+
+    @keyframes pls { 0%,100%{opacity:1}50%{opacity:.3} }
+    @keyframes waP { 0%{box-shadow:0 0 0 0 rgba(37,211,102,.55)}70%{box-shadow:0 0 0 15px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)} }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none} }
+
+    /* ─── RESPONSIVE ─── */
+    @media(max-width:1060px){
+      #hero { grid-template-columns: 1fr; }
+      .hero-right { display: none; }
+      .hero-left { padding: 140px 0 80px; }
+      .about-bento { grid-template-columns: 1fr; grid-template-rows: auto; }
+      .ab-intro { grid-column: 1; }
+      .ab-photo { grid-column: 1; grid-row: auto; min-height: 280px; }
+      .ab-pillars { grid-column: 1; }
+      .svc-grid { grid-template-columns: repeat(2,1fr); }
+      .ceo-wrap { grid-template-columns: 1fr; }
+      .ceo-card { max-width: 340px; }
+      .team-grid { grid-template-columns: repeat(2,1fr); }
+      .why-grid { grid-template-columns: repeat(2,1fr); }
+      .testi-grid { grid-template-columns: repeat(2,1fr); }
+      .con-wrap { grid-template-columns: 1fr; gap: 44px; }
+      .foot-top { grid-template-columns: 1fr 1fr; gap: 28px; }
+      .proc-row { grid-template-columns: 1fr 1fr; }
+      .proc-connector { display: none; }
+    }
+    @media(max-width:700px){
+      .sec { padding: 62px 0; }
+      .nav-links-wrap,.nav-tel { display: none; }
+      .hbg { display: flex; }
+      .hero-h1 { font-size: 2.4rem; }
+      .stat-row { flex-direction: column; gap: 16px; }
+      .stat-item { border: none; padding: 0; margin: 0; }
+      .ab-pillars { grid-template-columns: 1fr; }
+      .svc-grid { grid-template-columns: 1fr; }
+      .impact-row { flex-direction: column; gap: 28px; }
+      .imp-sep { display: none; }
+      .team-grid,.why-grid,.testi-grid,.proc-row { grid-template-columns: 1fr; }
+      .foot-top { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .sec-grid { grid-template-columns: 1fr 1fr; }
+      .hero-actions { flex-direction: column; align-items: flex-start; }
+      .svc-header { flex-direction: column; }
+      .svc-header p { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ NAV ═══════════════════════════════════════════════ -->
+<header id="topnav">
+  <div class="wrap">
+    <div class="nav-bar">
+      <div class="nav-logo">
+        <div class="nav-logo-inner">
+          <img src="logo.png" alt="OptSol Consulting Group" />
+        </div>
+      </div>
+      <div class="nav-links-wrap">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#ceo">Leadership</a>
+        <a href="#team">Team</a>
+        <a href="#testimonials">Clients</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="nav-right">
+        <a class="nav-tel" href="tel:+256200915802">+256 200 915802</a>
+        <a class="btn btn-solid" href="#contact">Free Consultation</a>
+      </div>
+      <button class="hbg" id="hbg" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<nav class="mob-menu" id="mobmenu">
+  <a href="#about" onclick="closeMob()">About Us</a>
+  <a href="#services" onclick="closeMob()">Services</a>
+  <a href="#ceo" onclick="closeMob()">Leadership</a>
+  <a href="#team" onclick="closeMob()">Our Team</a>
+  <a href="#testimonials" onclick="closeMob()">Clients</a>
+  <a href="#contact" onclick="closeMob()">Contact</a>
+  <a href="tel:+256200915802" style="color:rgba(255,150,120,.9);margin-top:10px" onclick="closeMob()">+256 200 915802</a>
+  <a class="btn btn-solid mob-cta" href="#contact" onclick="closeMob()" style="justify-content:center">Get Free Consultation</a>
+</nav>
+
+<!-- ══ HERO ══════════════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-accent-bar"></div>
+  <!-- Left -->
+  <div class="hero-left">
+    <div class="hero-watermark">12+</div>
+    <div class="wrap-inner" style="padding-left:28px; max-width:640px; animation:fadeUp .88s ease both">
+      <div class="hero-tag"><span class="hero-dot"></span>Uganda's Premier Consulting Firm</div>
+      <h1 class="hero-h1">
+        Expert Accounting,<br>
+        <mark>Auditing &amp; Consulting</mark><br>
+        Solutions in Uganda
+      </h1>
+      <p class="hero-sub">12+ years of trusted financial excellence across Uganda, Rwanda, Kenya, Ethiopia, Liberia and beyond. ICPAU-certified professionals delivering precision, compliance, and growth.</p>
+      <div class="hero-actions">
+        <a class="btn btn-solid" href="#contact">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          Book Free Consultation
+        </a>
+        <a class="btn btn-ghost" href="#services">View Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
+      </div>
+      <div class="stat-row">
+        <div class="stat-item"><div class="stat-n"><span data-count="12" data-suf="+">0</span></div><div class="stat-l">Years Experience</div></div>
+        <div class="stat-item"><div class="stat-n"><span data-count="200" data-suf="+">0</span></div><div class="stat-l">Clients Served</div></div>
+        <div class="stat-item"><div class="stat-n"><span data-count="6" data-suf="+">0</span></div><div class="stat-l">Countries Active</div></div>
+      </div>
+    </div>
+  </div>
+  <!-- Right photo -->
+  <div class="hero-right">
+    <div class="hero-photo-main"></div>
+    <div class="hero-photo-ov"></div>
+    <div class="hero-portrait">
+      <img src="julius.png" alt="CPA Julius Tumuhimbise" />
+      <div class="hero-portrait-cap">CPA Julius Tumuhimbise <span>Managing Partner &amp; Founder</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TRUST ══════════════════════════════════════════════ -->
+<div id="trust">
+  <div class="wrap">
+    <div class="trust-row">
+      <div class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>ICPAU Member</div>
+      <div class="tsep"></div>
+      <div class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Institute of Internal Auditors Uganda</div>
+      <div class="tsep"></div>
+      <div class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>12+ Years Excellence</div>
+      <div class="tsep"></div>
+      <div class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>6+ Countries Served</div>
+      <div class="tsep"></div>
+      <div class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>Strict Confidentiality</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ ABOUT ══════════════════════════════════════════════ -->
+<section id="about" class="sec">
+  <div class="wrap">
+    <div class="about-bento rv">
+      <!-- Intro text -->
+      <div class="ab-intro">
+        <div>
+          <span class="label" style="color:rgba(255,150,130,.9)"><span style="background:rgba(255,150,130,.9)"></span>Who We Are</span>
+          <h2 style="margin-top:14px">Uganda's Most Trusted Financial & Advisory Firm — For Over 12 Years</h2>
+          <p>Founded in Ntinda, Kampala and led by CPA Julius Tumuhimbise, OptSol Consulting Group brings qualified Chartered and Certified Public Accountants to businesses, NGOs, government agencies and development organisations across Uganda and East Africa. We combine global professional standards with a deep understanding of the local context — giving every client a real partner, not just a service provider.</p>
+        </div>
+        <a class="btn btn-solid" href="#contact" style="margin-top:28px; width:fit-content">
+          Partner With Us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+      </div>
+      <!-- Julius photo -->
+      <div class="ab-photo">
+        <img src="julius.png" alt="CPA Julius Tumuhimbise – Managing Partner, OptSol Consulting" loading="lazy" />
+        <div class="ab-photo-cap">
+          <div class="name">CPA Julius Tumuhimbise</div>
+          <div class="role">Managing Partner &amp; Founder</div>
+          <div class="creds">
+            <span class="cred-pill">CPA (U)</span>
+            <span class="cred-pill">ICPAU</span>
+            <span class="cred-pill">IIA Uganda</span>
+            <span class="cred-pill">Lions Club</span>
+          </div>
+        </div>
+      </div>
+      <!-- Three pillars -->
+      <div class="ab-pillars">
+        <div class="ap rv">
+          <div class="ap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div>
+          <h4>ICPAU &amp; IIA Accredited</h4>
+          <p>Prequalified with Uganda's leading professional bodies, upholding the highest standards of ethics and technical practice in every engagement.</p>
+        </div>
+        <div class="ap rv d1">
+          <div class="ap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
+          <h4>Pan-African Experience</h4>
+          <p>Active across Uganda, Rwanda, Kenya, Ethiopia, Liberia and beyond — we understand the regulatory landscape and business culture across East Africa.</p>
+        </div>
+        <div class="ap rv d2">
+          <div class="ap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <h4>On Time, Every Time</h4>
+          <p>Structured engagements with clear deliverables and honest timelines. Your regulators, donors, and boards can always depend on us to deliver.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SERVICES ═══════════════════════════════════════════ -->
+<section id="services" class="sec">
+  <div class="wrap">
+    <div class="svc-header rv">
+      <div>
+        <span class="label">Our Services</span>
+        <h2 style="margin-top:12px">12 Specialised Service Areas</h2>
+      </div>
+      <p>From statutory audits to ICT consulting — comprehensive solutions that power your organisation's compliance, efficiency, and strategic growth across East Africa.</p>
+    </div>
+    <div class="svc-grid">
+      <a class="sc rv" href="#contact"><div class="sc-num">01</div><div class="sc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div><h3>Audit &amp; Assurance</h3><p>Statutory, programme, IT, performance, and operational audits. Due diligence and internal audit framework design.</p><span class="sc-link">Enquire <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></span></a>
+
+      <a class="sc rv d1" href="#contact"><div class="sc-num">02</div><div class="sc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><h3>Tax Advisory</h3><p>Strategic tax planning, URA compliance, filing support, and expert dispute resolution for full tax efficiency.</p><span class="sc-link">Enquire <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></span></a>
+
+      <a class="sc rv d2" href="#contact"><div class="sc-num">03</div><div class="sc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><h3>Financial Services</h3><p>Financial reporting, bookkeeping, payroll management, budgeting, and cash flow forecasting — always decision-ready.</p><span class="sc-link">Enquire <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></span></a>
+
+      <a class="sc rv d3" href="#contact"><div class="sc-num">04</div><div class="sc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div><h3>Public Financial Management</h3><p>PFM reforms, IFMS integration, budget execution reviews, and donor fund accountability reporting.</p><span class="sc-link">Enquire <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></span></a>
+
+      <a class="sc rv" href="#contact"><div class="sc-num">05</div><div class="sc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg></div><h3>Accountancy</h3><p>IFRS-compliant financial statements, management accounts, reconciliations, and chart of accounts design.</p><span class="sc-link">Enquire <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></span></a>
+
+      <a class="sc rv d1" href="#contact"><div class="sc-num">06</div><div class="sc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div><h3>Training &amp; Capacity Building</h3><p>Customised workshops in financial management, audit, tax, and governance for teams and boards.</p><span class="sc-link">Enquire <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></span></a>
+
+      <a class="sc rv d2" href="#contact"><div class="sc-num">07</div><div class="sc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div><h3>Project Management</h3><p>End-to-end project planning, monitoring, evaluation, and reporting for donor-funded and capital programmes.</p><span class="sc-link">Enquire <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></span></a>
+
+      <a class="sc rv d3" href="#contact"><div class="sc-num">08</div><div class="sc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><h3>ICT Consulting</h3><p>Digital transformation, ERP evaluation, systems audits, data governance, and technology advisory.</p><span class="sc-link">Enquire <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></span></a>
+
+      <a class="sc rv" href="#contact"><div class="sc-num">09</div><div class="sc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div><h3>Baseline Surveys &amp; Research</h3><p>Baseline studies, needs assessments, programme evaluations, and impact assessments for NGOs and government.</p><span class="sc-link">Enquire <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></span></a>
+
+      <a class="sc rv d1" href="#contact"><div class="sc-num">10</div><div class="sc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Risk Consulting Services</h3><p>Enterprise risk assessments, internal controls review, fraud prevention, and governance advisory.</p><span class="sc-link">Enquire <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></span></a>
+
+      <a class="sc rv d2" href="#contact"><div class="sc-num">11</div><div class="sc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14"/><path d="M4.93 4.93a10 10 0 000 14.14"/></svg></div><h3>Management Consulting</h3><p>Strategic planning, organisational design, performance management, and operational efficiency reviews.</p><span class="sc-link">Enquire <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></span></a>
+
+      <a class="sc rv d3" href="#contact"><div class="sc-num">12</div><div class="sc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><h3>Social &amp; Business Research</h3><p>Market studies, feasibility analyses, and business intelligence for evidence-based decisions across sectors.</p><span class="sc-link">Enquire <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ IMPACT BAND ════════════════════════════════════════ -->
+<section id="impact">
+  <div class="wrap">
+    <div class="impact-row rv">
+      <div class="imp-item"><div class="imp-n"><span data-count="12" data-suf="+">0</span></div><div class="imp-l">Years of Expertise</div></div>
+      <div class="imp-sep"></div>
+      <div class="imp-item"><div class="imp-n"><span data-count="200" data-suf="+">0</span></div><div class="imp-l">Clients Served</div></div>
+      <div class="imp-sep"></div>
+      <div class="imp-item"><div class="imp-n"><span data-count="12" data-suf="">0</span></div><div class="imp-l">Service Areas</div></div>
+      <div class="imp-sep"></div>
+      <div class="imp-item"><div class="imp-n"><span data-count="6" data-suf="+">0</span></div><div class="imp-l">Countries Active</div></div>
+      <div class="imp-sep"></div>
+      <div class="imp-item"><div class="imp-n"><span data-count="98" data-suf="%">0</span></div><div class="imp-l">Client Satisfaction</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MD MESSAGE ════════════════════════════════════════ -->
+<section id="ceo" class="sec">
+  <div class="wrap">
+    <div class="ceo-wrap">
+      <!-- Card -->
+      <div class="ceo-card rv">
+        <div class="ceo-img">
+          <img src="julius.png" alt="CPA Julius Tumuhimbise – Managing Partner" loading="lazy" />
+        </div>
+        <div class="ceo-card-body">
+          <div class="ceo-card-name">CPA Julius Tumuhimbise</div>
+          <div class="ceo-card-role">Managing Partner &amp; Founder, OptSol Consulting Group</div>
+          <div class="ceo-card-tags">
+            <span class="ctag">CPA (U)</span>
+            <span class="ctag">ICPAU</span>
+            <span class="ctag">IIA Uganda</span>
+            <span class="ctag">Lions Club</span>
+            <span class="ctag">12+ Years</span>
+          </div>
+        </div>
+      </div>
+      <!-- Text -->
+      <div class="ceo-content rv d2">
+        <span class="label">Leadership</span>
+        <h2>A Word From Our Managing Partner</h2>
+        <div class="ceo-blockquote">
+          <p>"When I founded OptSol Consulting Group, I had one clear conviction: that businesses, NGOs, and public institutions in Uganda deserved world-class financial and advisory services — delivered by people who truly understand our local context."</p>
+        </div>
+        <div class="ceo-paras">
+          <p>Over the past 12 years, that conviction has shaped everything we do. We have invested in building a team of highly qualified professionals — Chartered Accountants, Certified Public Accountants, and sector specialists — who bring both technical depth and genuine dedication to every client engagement.</p>
+          <p>Our clients span ambitious startups, established enterprises, grassroots NGOs, multilateral donor-funded programmes, and local government authorities across Uganda and East Africa. What they share is a need for a financial partner who is honest, reliable, and focused on real outcomes.</p>
+          <p>Uganda's business environment continues to evolve rapidly. Tax laws change. Governance expectations rise. Digital transformation accelerates. OptSol's mission is to ensure our clients are always ahead of these shifts — protected, compliant, and positioned to grow.</p>
+        </div>
+        <a class="btn btn-solid" href="#contact" style="margin-top:28px">
+          Get Started Today <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TEAM ═══════════════════════════════════════════════ -->
+<section id="team" class="sec" style="background:var(--off)">
+  <div class="wrap">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:52px;flex-wrap:wrap;gap:16px" class="rv">
+      <div><span class="label">Our People</span><h2 style="margin-top:12px">Meet the OptSol Team</h2></div>
+      <p style="max-width:360px;text-align:right">Qualified professionals personally invested in delivering outcomes that transform your organisation.</p>
+    </div>
+    <div class="team-grid">
+      <div class="tm rv">
+        <div class="tm-img"><img src="julius.png" alt="CPA Julius Tumuhimbise" loading="lazy" /><div class="tm-img-ov"></div></div>
+        <div class="tm-body">
+          <div class="tm-name">CPA Julius Tumuhimbise</div>
+          <div class="tm-role">Managing Partner &amp; Founder</div>
+          <p class="tm-bio">12+ years across Uganda, Rwanda, Kenya, Ethiopia, Liberia. ICPAU member, IIA Uganda. The driving force behind OptSol's regional vision.</p>
+          <div class="tm-chips"><span class="chip">CPA (U)</span><span class="chip">ICPAU</span><span class="chip">IIA Uganda</span></div>
+        </div>
+      </div>
+      <div class="tm rv d1">
+        <div class="tm-img"><img src="team1.jpeg" alt="Senior Accountant – OptSol" loading="lazy" /><div class="tm-img-ov"></div></div>
+        <div class="tm-body">
+          <div class="tm-name">Senior Accountant</div>
+          <div class="tm-role">Financial Services &amp; Accountancy</div>
+          <p class="tm-bio">IFRS-compliant financial reporting, payroll management, and cash flow analysis for SMEs and NGOs across Uganda.</p>
+          <div class="tm-chips"><span class="chip">CPA (U)</span><span class="chip">IFRS</span></div>
+        </div>
+      </div>
+      <div class="tm rv d2">
+        <div class="tm-img"><img src="team2.jpeg" alt="Research & Audit Analyst – OptSol" loading="lazy" /><div class="tm-img-ov"></div></div>
+        <div class="tm-body">
+          <div class="tm-name">Research &amp; Audit Analyst</div>
+          <div class="tm-role">Audit, Assurance &amp; Research</div>
+          <p class="tm-bio">Programme audits, baseline surveys, and impact evaluations for NGOs and government clients. Clear, actionable findings every time.</p>
+          <div class="tm-chips"><span class="chip">Audit</span><span class="chip">Research</span></div>
+        </div>
+      </div>
+      <div class="tm rv d3">
+        <div class="tm-img"><img src="team3.jpeg" alt="Tax & Compliance Specialist – OptSol" loading="lazy" /><div class="tm-img-ov"></div></div>
+        <div class="tm-body">
+          <div class="tm-name">Tax &amp; Compliance Specialist</div>
+          <div class="tm-role">Tax Advisory &amp; URA Compliance</div>
+          <p class="tm-bio">Expert in URA compliance, VAT, PAYE, and corporate tax planning. Helps businesses navigate Uganda's tax landscape efficiently.</p>
+          <div class="tm-chips"><span class="chip">Tax Cert.</span><span class="chip">URA</span></div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:44px">
+      <a class="btn btn-wire" href="#contact">Enquire About Our Full Team</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHY ════════════════════════════════════════════════ -->
+<section id="why" class="sec">
+  <div class="wrap">
+    <div style="text-align:center;max-width:600px;margin:0 auto 60px" class="rv">
+      <span class="label" style="color:rgba(255,150,130,.85);justify-content:center"><span style="background:rgba(255,150,130,.85)"></span>Why OptSol</span>
+      <h2 style="color:#fff;margin-top:12px">Why 200+ Organisations Choose Us</h2>
+      <p style="color:rgba(255,255,255,.45)">Six compelling reasons why clients across East Africa trust OptSol as their financial and advisory partner.</p>
+    </div>
+    <div class="why-grid">
+      <div class="wc rv"><div class="wc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div><h4>ICPAU &amp; IIA Accredited</h4><p>Fully accredited by Uganda's premier accounting and audit bodies. Guaranteed technical excellence and ethical practice on every engagement.</p></div>
+      <div class="wc rv d1"><div class="wc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div><h4>Pan-African Experience</h4><p>Active across Uganda, Rwanda, Kenya, Ethiopia, Liberia and beyond. We understand the regulatory landscape and cultural nuances that matter.</p></div>
+      <div class="wc rv d2"><div class="wc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div><h4>12 Services, One Partner</h4><p>Audit, tax, ICT, research, PFM, training and more. One trusted firm for every financial and advisory need — no managing multiple providers.</p></div>
+      <div class="wc rv d3"><div class="wc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div><h4>Absolute Confidentiality</h4><p>Your data and strategy are protected by strict professional ethics, robust systems, and iron-clad confidentiality commitments — always.</p></div>
+      <div class="wc rv"><div class="wc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><h4>On-Time Delivery</h4><p>Structured engagements that produce accurate, actionable outputs on schedule. Your regulators, donors, and boards can always rely on us.</p></div>
+      <div class="wc rv d1"><div class="wc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 4 12 14.01 9 11.01"/></svg></div><h4>Transparent &amp; Results-Focused</h4><p>No hidden fees. Clear proposals, measurable outcomes, and a team personally invested in your organisation's long-term success.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TESTIMONIALS ═══════════════════════════════════════ -->
+<section id="testimonials" class="sec">
+  <div class="wrap">
+    <div style="text-align:center;max-width:600px;margin:0 auto 60px" class="rv">
+      <span class="label" style="justify-content:center"><span></span>Client Stories</span>
+      <h2 style="margin-top:12px">Trusted Across Uganda &amp; East Africa</h2>
+      <p>Hear directly from the businesses, NGOs, and institutions we've partnered with over the years.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="tc rv">
+        <div class="tc-top"><div class="tc-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><div class="tc-quote-icon">"</div></div>
+        <p class="tc-text">"OptSol's audit team gave our board complete confidence. Their report was thorough, professionally presented, and delivered well ahead of our AGM deadline. More than auditors — they are strategic partners we trust completely."</p>
+        <div class="tc-author"><div class="tc-av" style="background:linear-gradient(135deg,var(--navy),var(--navy-2))">SM</div><div><div class="tc-name">Sarah Mubiru</div><div class="tc-role">Finance Director, Kampala Manufacturing Co.</div></div></div>
+      </div>
+      <div class="tc rv d1">
+        <div class="tc-top"><div class="tc-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><div class="tc-quote-icon">"</div></div>
+        <p class="tc-text">"We have relied on OptSol for our programme audits for four consecutive years. They understand NGO donor requirements deeply and communicate findings with exceptional clarity. Absolutely outstanding professionals."</p>
+        <div class="tc-author"><div class="tc-av" style="background:linear-gradient(135deg,var(--red-d),var(--red))">RK</div><div><div class="tc-name">Robert Kizito</div><div class="tc-role">Executive Director, East Africa Development NGO</div></div></div>
+      </div>
+      <div class="tc rv d2">
+        <div class="tc-top"><div class="tc-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><div class="tc-quote-icon">"</div></div>
+        <p class="tc-text">"OptSol's tax advisory transformed our compliance process. What used to be stressful is now seamless — and their strategic advice delivered measurable savings in the very first year. Highly recommended to any business."</p>
+        <div class="tc-author"><div class="tc-av" style="background:linear-gradient(135deg,#2A4E8A,var(--navy))">JN</div><div><div class="tc-name">Jennifer Nantongo</div><div class="tc-role">CEO, Retail &amp; Distribution Business, Kampala</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTORS ════════════════════════════════════════════ -->
+<section id="sectors">
+  <div class="wrap">
+    <div style="text-align:center;max-width:580px;margin:0 auto 52px" class="rv">
+      <span class="label" style="justify-content:center"><span></span>Sectors We Serve</span>
+      <h2 style="margin-top:12px">Industry Expertise Across Uganda</h2>
+    </div>
+    <div class="sec-grid">
+      <div class="sec-item rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg><span>Private Businesses</span></div>
+      <div class="sec-item rv d1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg><span>Multinationals</span></div>
+      <div class="sec-item rv d2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg><span>Government Agencies</span></div>
+      <div class="sec-item rv d3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>NGOs &amp; INGOs</span></div>
+      <div class="sec-item rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg><span>Banks &amp; MFIs</span></div>
+      <div class="sec-item rv d1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>Aid Organisations</span></div>
+      <div class="sec-item rv d2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg><span>Agriculture Sector</span></div>
+      <div class="sec-item rv d3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg><span>Health Sector</span></div>
+      <div class="sec-item rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg><span>Technology &amp; ICT</span></div>
+      <div class="sec-item rv d1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg><span>Development Sector</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROCESS ════════════════════════════════════════════ -->
+<section id="process" class="sec" style="background:var(--off)">
+  <div class="wrap">
+    <div style="text-align:center;max-width:580px;margin:0 auto 60px" class="rv">
+      <span class="label" style="justify-content:center"><span></span>How We Work</span>
+      <h2 style="margin-top:12px">A Simple, Transparent Process</h2>
+      <p>From first contact to final deliverable — structured, clear, and stress-free. No hidden costs, no surprises.</p>
+    </div>
+    <div class="proc-row">
+      <div class="proc-connector"></div>
+      <div class="proc-step rv"><div class="proc-circle">01</div><h4>Initial Consultation</h4><p>We listen to your needs and assess scope — at no cost to you.</p></div>
+      <div class="proc-step rv d1"><div class="proc-circle">02</div><h4>Proposal &amp; Agreement</h4><p>Clear, itemised proposal with transparent fees and timelines.</p></div>
+      <div class="proc-step rv d2"><div class="proc-circle">03</div><h4>Expert Execution</h4><p>Our qualified team delivers, keeping you informed at every milestone.</p></div>
+      <div class="proc-step rv d3"><div class="proc-circle">04</div><h4>Delivery &amp; Follow-Up</h4><p>Reports on time. We remain available as your ongoing partner.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA BAND ════════════════════════════════════════════ -->
+<section id="cta-band">
+  <div class="wrap">
+    <h2>Ready to Secure Your Organisation's Financial Future?</h2>
+    <p>Join hundreds of businesses, NGOs, and government institutions that trust OptSol for precision, compliance, and growth.</p>
+    <div class="cta-btns">
+      <a class="btn btn-solid" href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>Book Free Consultation</a>
+      <a class="btn btn-ghost" href="tel:+256200915802"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.81 19.79 19.79 0 01.22 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.41-.41a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>Call Us Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ════════════════════════════════════════════ -->
+<section id="contact" class="sec">
+  <div class="wrap">
+    <div class="con-wrap">
+      <div class="rv">
+        <span class="label">Get In Touch</span>
+        <h2 style="margin-top:12px">Let's Talk About Your Needs</h2>
+        <p style="margin-top:12px;margin-bottom:30px">Whether you need a statutory audit, tax advisory, or a full financial health review — our team is ready. Start with a free, no-obligation consultation.</p>
+        <div class="con-items">
+          <div class="ci-row"><div class="ci-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><strong>Our Office</strong><span>Ntinda, Kampala, Uganda</span></div></div>
+          <div class="ci-row"><div class="ci-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.81 19.79 19.79 0 01.22 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.41-.41a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div><div><strong>Phone / WhatsApp</strong><a href="tel:+256200915802">+256 200 915802</a></div></div>
+          <div class="ci-row"><div class="ci-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><strong>Email</strong><a href="mailto:info@optsolconsulting.com">info@optsolconsulting.com</a></div></div>
+          <div class="ci-row"><div class="ci-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><strong>Business Hours</strong><span>Monday – Friday: 8:00 AM – 6:00 PM EAT</span></div></div>
+        </div>
+        <a class="map-btn" href="https://maps.google.com/?q=Ntinda,Kampala,Uganda" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span class="mt">Ntinda, Kampala, Uganda</span>
+          <small>Click to open in Google Maps ↗</small>
+        </a>
+      </div>
+      <div class="con-form rv d2">
+        <h3>Send Us a Message</h3>
+        <p>We respond within one business day. Fields marked * are required.</p>
+        <div class="form-row">
+          <div class="fg"><label>First Name *</label><input type="text" id="fn" placeholder="John" required /></div>
+          <div class="fg"><label>Last Name *</label><input type="text" id="ln" placeholder="Doe" required /></div>
+        </div>
+        <div class="fg"><label>Email Address *</label><input type="email" id="em" placeholder="john@company.com" required /></div>
+        <div class="fg"><label>Phone / WhatsApp</label><input type="tel" id="ph" placeholder="+256 700 000000" /></div>
+        <div class="fg"><label>Organisation</label><input type="text" id="org" placeholder="Your organisation name" /></div>
+        <div class="fg">
+          <label>Service of Interest *</label>
+          <select id="svc" required>
+            <option value="">— Select a service —</option>
+            <option>Audit &amp; Assurance</option><option>Tax Advisory</option>
+            <option>Financial Services</option><option>Public Financial Management</option>
+            <option>Accountancy</option><option>Training &amp; Capacity Building</option>
+            <option>Project Management</option><option>ICT Consulting</option>
+            <option>Baseline Surveys &amp; Research</option><option>Risk Consulting Services</option>
+            <option>Management Consulting</option><option>Social &amp; Business Research</option>
+            <option>Other / Not Sure</option>
+          </select>
+        </div>
+        <div class="fg"><label>Your Message *</label><textarea id="msg" placeholder="Briefly describe your organisation and what you need assistance with…" required></textarea></div>
+        <button class="btn btn-solid" style="width:100%;justify-content:center;padding:14px;font-size:.9rem" onclick="submitForm(this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Send Message — We Respond Today
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══════════════════════════════════════════════ -->
+<footer id="footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="f-brand">
+        <div class="f-logo-box"><img src="logo.png" alt="OptSol Consulting Group" /></div>
+        <p>Qualified Chartered &amp; Certified Public Accountants providing audit, tax, financial management, and advisory services to businesses, NGOs, and government across Uganda and East Africa since 2012. Founded by CPA Julius Tumuhimbise.</p>
+        <div class="socials">
+          <a class="soc" href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a class="soc" href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a class="soc" href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a class="soc" href="mailto:info@optsolconsulting.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+        </div>
+      </div>
+      <div class="f-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Audit &amp; Assurance</a></li>
+          <li><a href="#services">Tax Advisory</a></li>
+          <li><a href="#services">Risk Consulting</a></li>
+          <li><a href="#services">Financial Services</a></li>
+          <li><a href="#services">Public Fin. Management</a></li>
+          <li><a href="#services">ICT Consulting</a></li>
+          <li><a href="#services">Baseline Surveys</a></li>
+          <li><a href="#services">Management Consulting</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#ceo">MD's Message</a></li>
+          <li><a href="#team">Our Team</a></li>
+          <li><a href="#testimonials">Client Stories</a></li>
+          <li><a href="#sectors">Sectors We Serve</a></li>
+          <li><a href="#why">Why Choose Us</a></li>
+          <li><a href="#contact">Careers</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Contact</h4>
+        <div class="f-ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Ntinda, Kampala, Uganda</span></div>
+        <div class="f-ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.81 19.79 19.79 0 01.22 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.41-.41a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg><a href="tel:+256200915802">+256 200 915802</a></div>
+        <div class="f-ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:info@optsolconsulting.com">info@optsolconsulting.com</a></div>
+        <div class="f-ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>Mon–Fri: 8 AM – 6 PM EAT</span></div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>&copy; 2025 OptSol Consulting Group Ltd. All rights reserved. Registered in Uganda.</p>
+      <div class="f-badges">
+        <span class="fbdg">ICPAU</span><span class="fbdg">IIA Uganda</span>
+        <span class="fbdg">Lions Club</span><span class="fbdg">12+ Years</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp -->
+<a class="wa" href="https://wa.me/256200915802?text=Hello%20OptSol%2C%20I%20would%20like%20to%20enquire%20about%20your%20consulting%20services." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <span class="wa-tip">Chat on WhatsApp</span>
+  <svg viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.12.555 4.108 1.523 5.836L.057 23.168a.5.5 0 00.61.637l5.453-1.43A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.886 0-3.655-.52-5.17-1.425l-.37-.22-3.836 1.006 1.024-3.737-.243-.386A9.955 9.955 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+  </svg>
+</a>
+
+<script>
+  /* Nav solid on scroll */
+  const nav = document.getElementById('topnav');
+  window.addEventListener('scroll', () => nav.classList.toggle('solid', window.scrollY > 50), {passive:true});
+
+  /* Mobile menu */
+  const hbg = document.getElementById('hbg'), mob = document.getElementById('mobmenu');
+  hbg.addEventListener('click', () => {
+    const o = mob.classList.toggle('open');
+    hbg.classList.toggle('open', o);
+    document.body.style.overflow = o ? 'hidden' : '';
+  });
+  function closeMob() { mob.classList.remove('open'); hbg.classList.remove('open'); document.body.style.overflow = ''; }
+
+  /* Scroll reveal */
+  const rvEls = document.querySelectorAll('.rv');
+  const obs = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); }), {threshold: .1});
+  rvEls.forEach(el => obs.observe(el));
+
+  /* Counters — data-suf attribute */
+  document.querySelectorAll('[data-count]').forEach(el => {
+    const co = new IntersectionObserver(es => {
+      if(es[0].isIntersecting) {
+        const t = +el.dataset.count, s = el.dataset.suf || '', steps = 1600/16;
+        let c = 0;
+        const tm = setInterval(() => { c = Math.min(c + t/steps, t); el.textContent = Math.floor(c) + s; if(c >= t) clearInterval(tm); }, 16);
+        co.unobserve(el);
+      }
+    }, {threshold:.5});
+    co.observe(el);
+  });
+
+  /* Active nav links */
+  const aLinks = document.querySelectorAll('.nav-links-wrap a');
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    document.querySelectorAll('section[id]').forEach(s => { if(window.scrollY >= s.offsetTop - 120) cur = s.id; });
+    aLinks.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + cur));
+  }, {passive:true});
+
+  /* Form */
+  function submitForm(btn) {
+    const fn = document.getElementById('fn').value.trim(),
+          em = document.getElementById('em').value.trim(),
+          svc = document.getElementById('svc').value,
+          msg = document.getElementById('msg').value.trim();
+    if (!fn || !em || !svc || !msg) {
+      const o = btn.innerHTML;
+      btn.textContent = '⚠ Please fill all required fields';
+      btn.style.background = '#8B1E0E'; btn.style.borderColor = '#8B1E0E';
+      setTimeout(() => { btn.innerHTML = o; btn.style.background = ''; btn.style.borderColor = ''; }, 2500);
+      return;
+    }
+    const o = btn.innerHTML; btn.textContent = 'Sending…'; btn.disabled = true;
+    const org = document.getElementById('org').value.trim(), ph = document.getElementById('ph').value.trim();
+    const wa = `https://wa.me/256200915802?text=${encodeURIComponent(`Hello OptSol,\n\nName: ${fn}\nEmail: ${em}${ph?'\nPhone: '+ph:''}${org?'\nOrg: '+org:''}\nService: ${svc}\n\n${msg}`)}`;
+    setTimeout(() => {
+      btn.textContent = '✓ Sent — Thank You!'; btn.style.background = '#1B7A40'; btn.style.borderColor = '#1B7A40';
+      window.open(wa, '_blank');
+      setTimeout(() => { btn.innerHTML = o; btn.style.background = ''; btn.style.borderColor = ''; btn.disabled = false; }, 4000);
+    }, 800);
+  }
+</script>
+</body>
+</html>
